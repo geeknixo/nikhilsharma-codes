@@ -1,0 +1,13 @@
+digraph ER_Diagram {
+    rankdir=LR;
+    node [shape=record, fontname=Arial];
+
+    Users [label="{Users|+ id : INT PK\l+ first_name : VARCHAR\l+ last_name : VARCHAR\l+ email : VARCHAR\l+ password : VARCHAR\l}"];
+    Flights [label="{Flights|+ id : INT PK\l+ flight_number : VARCHAR\l+ origin : VARCHAR\l+ destination : VARCHAR\l+ departure_time : DATETIME\l+ arrival_time : DATETIME\l+ price : DECIMAL\l+ available_seats : INT\l}"];
+    Bookings [label="{Bookings|+ id : INT PK\l+ user_id : INT FK\l+ flight_id : INT FK\l+ booking_date : DATETIME\l+ status : VARCHAR\l}"];
+    Passengers [label="{Passengers|+ id : INT PK\l+ booking_id : INT FK\l+ first_name : VARCHAR\l+ last_name : VARCHAR\l+ age : INT\l+ email : VARCHAR\l+ phone : VARCHAR\l}"];
+
+    Users -> Bookings [label="1 to many", arrowhead="crow"];
+    Flights -> Bookings [label="1 to many", arrowhead="crow"];
+    Bookings -> Passengers [label="1 to many", arrowhead="crow"];
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Data Flow Diagram (DFD) - Aero Flight Booking System</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+  }
+  .diagram-container {
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  .process, .data-store, .external-entity {
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 16px;
+  }
+  .process {
+    width: 220px;
+    height: 100px;
+    background: #d0e7ff;
+    border: 3px solid #007acc;
+  }
+  .data-store {
+    width: 200px;
+    height: 80px;
+    background: #ffe6cc;
+    border: 3px solid #ff9900;
+  }
+  .external-entity {
+    width: 200px;
+    height: 80px;
+    background: #d9f0d9;
+    border: 3px solid #33aa33;
+  }
+  /* Positions */
+  #user {
+    top: 50px;
+    left: 50px;
+  }
+  #flight-search {
+    top: 50px;
+    left: 320px;
+  }
+  #booking-process {
+    top: 200px;
+    left: 320px;
+  }
+  #payment {
+    top: 350px;
+    left: 320px;
+  }
+  #database {
+    top: 200px;
+    left: 700px;
+  }
+  #admin {
+    top: 50px;
+    left: 700px;
+  }
+  /* SVG lines */
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .label-text {
+    font-size: 14px;
+    fill: #333;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">Data Flow Diagram (DFD) - Aero Flight Booking System</h2>
+<div class="diagram-container" id="diagram">
+  <div class="external-entity" id="user">User<br /><small>(Customer)</small></div>
+  <div class="process" id="flight-search">Flight Search<br /><small>Process 1</small></div>
+  <div class="process" id="booking-process">Booking Process<br /><small>Process 2</small></div>
+  <div class="process" id="payment">Payment Processing<br /><small>Process 3 (Future)</small></div>
+  <div class="data-store" id="database">Database<br /><small>Users, Flights, Bookings, Passengers</small></div>
+  <div class="external-entity" id="admin">Admin<br /><small>System Administrator</small></div>
+
+  <svg width="1000" height="700">
+    <!-- User to Flight Search -->
+    <line x1="250" y1="90" x2="320" y2="90" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="270" y="75" class="label-text">Search Request</text>
+
+    <!-- Flight Search to Database -->
+    <line x1="540" y1="100" x2="700" y2="100" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="620" y="85" class="label-text">Query Flights</text>
+
+    <!-- Database to Flight Search -->
+    <line x1="700" y1="130" x2="540" y2="130" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="620" y="145" class="label-text">Flight Data</text>
+
+    <!-- Flight Search to User -->
+    <line x1="320" y1="150" x2="250" y2="150" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="270" y="165" class="label-text">Search Results</text>
+
+    <!-- User to Booking Process -->
+    <line x1="250" y1="190" x2="320" y2="250" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="270" y="220" class="label-text" transform="rotate(-20 270,220)">Booking Request</text>
+
+    <!-- Booking Process to Database -->
+    <line x1="540" y1="280" x2="700" y2="280" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="620" y="265" class="label-text">Store Booking</text>
+
+    <!-- Database to Booking Process -->
+    <line x1="700" y1="310" x2="540" y2="310" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="620" y="325" class="label-text">Booking Confirmation</text>
+
+    <!-- Booking Process to Payment -->
+    <line x1="540" y1="350" x2="320" y2="400" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="400" y="370" class="label-text">Payment Info</text>
+
+    <!-- Payment to Booking Process -->
+    <line x1="320" y1="450" x2="540" y2="420" stroke="#007acc" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="400" y="440" class="label-text">Payment Status</text>
+
+    <!-- Admin to Database -->
+    <line x1="900" y1="90" x2="700" y2="90" stroke="#33aa33" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="800" y="75" class="label-text" fill="#33aa33">Manage Data</text>
+
+    <!-- Database to Admin -->
+    <line x1="700" y1="130" x2="900" y2="130" stroke="#33aa33" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="800" y="145" class="label-text" fill="#33aa33">Data Reports</text>
+
+    <defs>
+      <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L12,6 L0,12 L3,6 z" fill="#007acc" />
+      </marker>
+    </defs>
+  </svg>
+</div>
+</body>
+</html>

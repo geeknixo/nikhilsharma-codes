@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ER Diagram - Aero Flight Booking System</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+  }
+  .diagram-container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  .entity {
+    position: absolute;
+    width: 220px;
+    border: 2px solid #007acc;
+    border-radius: 6px;
+    background: #e6f0fa;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  }
+  .entity-header {
+    background: #007acc;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-align: center;
+  }
+  .entity-attributes {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  /* Positioning entities */
+  #users {
+    top: 40px;
+    left: 40px;
+  }
+  #flights {
+    top: 40px;
+    right: 40px;
+  }
+  #bookings {
+    top: 220px;
+    left: 340px;
+  }
+  #passengers {
+    top: 380px;
+    left: 340px;
+  }
+  /* Lines and arrows */
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .label-text {
+    font-size: 12px;
+    fill: #333;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">ER Diagram - Aero Flight Booking System</h2>
+<div class="diagram-container" id="diagram">
+  <div class="entity" id="users">
+    <div class="entity-header">Users</div>
+    <div class="entity-attributes">
+      &#x2022; id : INT (PK)<br />
+      &#x2022; first_name : VARCHAR<br />
+      &#x2022; last_name : VARCHAR<br />
+      &#x2022; email : VARCHAR<br />
+      &#x2022; password : VARCHAR
+    </div>
+  </div>
+  <div class="entity" id="flights">
+    <div class="entity-header">Flights</div>
+    <div class="entity-attributes">
+      &#x2022; id : INT (PK)<br />
+      &#x2022; flight_number : VARCHAR<br />
+      &#x2022; origin : VARCHAR<br />
+      &#x2022; destination : VARCHAR<br />
+      &#x2022; departure_time : DATETIME<br />
+      &#x2022; arrival_time : DATETIME<br />
+      &#x2022; price : DECIMAL<br />
+      &#x2022; available_seats : INT
+    </div>
+  </div>
+  <div class="entity" id="bookings">
+    <div class="entity-header">Bookings</div>
+    <div class="entity-attributes">
+      &#x2022; id : INT (PK)<br />
+      &#x2022; user_id : INT (FK)<br />
+      &#x2022; flight_id : INT (FK)<br />
+      &#x2022; booking_date : DATETIME<br />
+      &#x2022; status : VARCHAR
+    </div>
+  </div>
+  <div class="entity" id="passengers">
+    <div class="entity-header">Passengers</div>
+    <div class="entity-attributes">
+      &#x2022; id : INT (PK)<br />
+      &#x2022; booking_id : INT (FK)<br />
+      &#x2022; first_name : VARCHAR<br />
+      &#x2022; last_name : VARCHAR<br />
+      &#x2022; age : INT<br />
+      &#x2022; email : VARCHAR<br />
+      &#x2022; phone : VARCHAR
+    </div>
+  </div>
+
+  <svg width="900" height="500">
+    <!-- Users to Bookings -->
+    <line x1="260" y1="80" x2="340" y2="280" stroke="#007acc" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="280" y="180" class="label-text">1 to many</text>
+
+    <!-- Flights to Bookings -->
+    <line x1="640" y1="80" x2="560" y2="280" stroke="#007acc" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="580" y="180" class="label-text">1 to many</text>
+
+    <!-- Bookings to Passengers -->
+    <line x1="450" y1="340" x2="450" y2="380" stroke="#007acc" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="460" y="360" class="label-text" transform="rotate(90 460,360)">1 to many</text>
+
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L10,5 L0,10 L2,5 z" fill="#007acc" />
+      </marker>
+    </defs>
+  </svg>
+</div>
+</body>
+</html>

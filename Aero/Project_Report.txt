@@ -1,0 +1,159 @@
+DECLARATION
+-----------
+This declaration affirms that the project titled "Aero Flight Booking System" is an original work developed by the project team. The content and information presented in this report are authentic and have been compiled with dedication and integrity. The project has been executed to meet the specified objectives and requirements, and all sources of information and references have been duly acknowledged. This declaration serves to confirm the originality and sincerity of the work undertaken.
+
+ACKNOWLEDGEMENT
+---------------
+We extend our heartfelt gratitude to our project guide, mentors, and all individuals who have provided invaluable support and guidance throughout the development of this project. Their expert advice, encouragement, and constructive criticism have been instrumental in shaping the project to its successful completion. We also thank our peers and family members for their unwavering support and motivation, which have been vital in overcoming challenges during the project lifecycle.
+
+PREFACE
+-------
+The Aero Flight Booking System project report documents the comprehensive process of designing, developing, and implementing a web-based flight booking platform. This system is intended to simplify the process of searching, booking, and managing flights for users while providing administrative capabilities for managing flight data and bookings. The report covers all phases of the project, including system analysis, design, implementation, testing, and future enhancements. It aims to provide a clear understanding of the project scope, technologies used, and the methodologies applied to achieve the project goals.
+
+TABLE OF CONTENT
+----------------
+DECLARATION
+ACKNOWLEDGEMENT
+PREFACE
+CHAPTER 1: INTRODUCTION
+CHAPTER 2: TECHNOLOGY USED
+CHAPTER 3: SYSTEM ANALYSIS AND SYSTEM STUDY
+CHAPTER 4: PROJECT DESIGN
+CHAPTER 5: MECHANISM USED
+CHAPTER 6: FUTURE SCOPE
+CHAPTER 7: REFERENCES AND DIPLOGRAPHY
+CHAPTER 8: CODE
+
+CHAPTER 1: INTRODUCTION
+------------------------
+Introduction of Project:
+The Aero Flight Booking System is a comprehensive web application designed to facilitate the booking of flights for users in a seamless and efficient manner. The system provides a user-friendly interface that allows customers to search for flights based on various criteria such as origin, destination, and travel dates. It also supports functionalities like booking confirmation, passenger details management, and user profile handling. The administrative side of the system enables authorized personnel to manage flight schedules, update flight information, and oversee bookings. This project aims to automate and streamline the flight booking process, reducing manual intervention and enhancing user experience.
+
+Project Modules:
+The system is divided into several key modules to ensure modularity and ease of maintenance:
+- User Registration and Authentication: This module handles user sign-up, login, and session management, ensuring secure access to the system.
+- Flight Search and Selection: Users can search for available flights by specifying travel details and view flight options with pricing and availability.
+- Booking Management: This module allows users to book flights, view their booking history, and manage existing reservations.
+- Admin Dashboard: Provides administrative functionalities such as adding new flights, updating flight details, deleting flights, and managing user bookings.
+- Profile Management: Enables users to update their personal information and view their booking details.
+- Payment Integration (Future Scope): Although not currently implemented, this module is planned to handle online payments securely.
+
+Hardware Requirements:
+The system requires basic hardware infrastructure to operate effectively:
+- A server or computer capable of running a web server (such as Apache) and a database server (MySQL).
+- Network connectivity to allow users to access the web application over the internet or intranet.
+- Client devices such as desktops, laptops, tablets, or smartphones with internet access to use the application.
+- Standard peripherals including keyboard, mouse, and display devices.
+
+Software Requirements:
+The software stack for the Aero Flight Booking System includes:
+- Web Server: Apache HTTP Server or any compatible server to host PHP files.
+- Database Server: MySQL for managing relational data including users, flights, and bookings.
+- Server-side Scripting: PHP to handle backend logic, database interactions, and session management.
+- Client-side Technologies: HTML5, CSS3, and JavaScript for building the user interface and enhancing interactivity.
+- Operating System: Compatible with Windows or Linux environments capable of running the web and database servers.
+- Development Tools: Code editors like VSCode and database management tools such as phpMyAdmin or MySQL Workbench.
+
+CHAPTER 2: TECHNOLOGY USED
+---------------------------
+Frontend Technology:
+The frontend of the Aero Flight Booking System is developed using standard web technologies including HTML5 for structuring content, CSS3 for styling, and JavaScript for client-side scripting. The CSS file (style.css) defines the visual layout, colors, fonts, and responsive design elements to ensure the application is accessible across various devices. JavaScript (script.js) enhances user experience by enabling dynamic content updates, form validations, and interactive elements such as mobile menu toggling. The frontend is designed to be intuitive and user-friendly, providing easy navigation and clear presentation of flight information.
+
+Backend Technology:
+The backend is implemented using PHP, a widely-used server-side scripting language known for its compatibility with web servers and databases. PHP scripts handle critical functionalities such as user authentication, session management, flight data retrieval, booking processing, and administrative operations. The backend communicates with a MySQL database to store and retrieve persistent data, ensuring data integrity and security. The use of PHP allows for rapid development and easy integration with the frontend components.
+
+Frontend and Backend Tools:
+- PHP: Server-side scripting language used for backend logic.
+- MySQL: Relational database management system for data storage.
+- Apache HTTP Server: Web server to serve PHP files and handle HTTP requests.
+- CSS and JavaScript: For frontend styling and interactivity.
+- SQL Scripts: Used for creating database schema and populating initial data.
+- Development Environment: Tools such as VSCode for code editing and debugging.
+- Version Control (optional): Git or similar tools for source code management.
+
+CHAPTER 3: SYSTEM ANALYSIS AND SYSTEM STUDY
+-------------------------------------------
+Project Analysis:
+The Aero Flight Booking System addresses the need for an efficient and automated platform to manage flight bookings. It eliminates the traditional manual booking process, reducing errors and improving customer satisfaction. The system provides real-time flight availability and pricing, enabling users to make informed decisions. It also offers administrative controls to manage flight schedules and bookings effectively.
+
+SDLC Steps:
+The project follows the Software Development Life Cycle (SDLC) methodology, encompassing the following phases:
+- Requirement Gathering: Collecting detailed requirements from stakeholders to understand the system needs.
+- System Design: Creating architectural designs, database schemas, and user interface layouts.
+- Implementation: Coding the frontend and backend components based on the design specifications.
+- Testing: Conducting unit, integration, and system testing to ensure functionality and reliability.
+- Deployment: Installing the system on a live server for user access.
+- Maintenance: Providing ongoing support, bug fixes, and updates as needed.
+
+Requirement Specification:
+The system requirements include:
+- User-friendly interface for flight search and booking.
+- Secure user registration and login mechanisms.
+- Real-time flight availability and pricing information.
+- Administrative panel for managing flights and bookings.
+- Responsive design for accessibility on multiple devices.
+- Data integrity and security measures to protect user information.
+
+Feasibility Study:
+- Technical Feasibility: The project utilizes proven technologies such as PHP and MySQL, ensuring ease of development and deployment.
+- Economic Feasibility: The system reduces manual labor and operational costs by automating booking processes.
+- Operational Feasibility: Designed to be user-friendly, the system can be easily adopted by users and administrators.
+
+Cost Benefit Analysis:
+The benefits of the Aero Flight Booking System include improved efficiency, enhanced user experience, and streamlined operations. The costs involve development time, server hosting, and maintenance expenses. The overall benefits outweigh the costs, making the project a viable solution for flight booking management.
+
+CHAPTER 4: PROJECT DESIGN
+-------------------------
+Data Dictionary:
+The database schema includes tables such as users, flights, bookings, and passengers. Each table contains fields with defined data types, constraints, and relationships to ensure data consistency. For example, the users table stores user credentials and personal information, while the flights table contains flight details like flight number, origin, destination, and timings.
+
+Data Flow Diagram:
+The data flow diagram illustrates the movement of data within the system. It shows how user inputs for flight search and booking are processed by the backend, how data is retrieved from the database, and how booking confirmations are generated and displayed to users.
+
+ER Diagrams:
+Entity-Relationship diagrams depict the relationships between entities such as users, flights, bookings, and passengers. These diagrams help in understanding how data entities interact and are linked within the database.
+
+System Flowchart:
+The system flowchart outlines the sequence of operations from user login, flight search, booking, to confirmation and profile management. It provides a visual representation of the system’s workflow and decision points.
+
+Snapshots:
+Screenshots of the user interface and admin dashboard showcase the design and functionality of the system. These snapshots demonstrate the ease of navigation and the features available to users and administrators.
+
+CHAPTER 5: MECHANISM USED
+-------------------------
+Testing Mechanism:
+The system undergoes rigorous testing to ensure all functionalities work as intended. Testing includes unit tests for individual components, integration tests for combined modules, and system tests for overall performance. User acceptance testing is also conducted to validate the system against requirements. Bugs and issues identified during testing are documented and resolved promptly.
+
+Implementation Mechanism:
+The project is implemented using a modular approach, separating frontend and backend components. PHP scripts handle server-side logic, while HTML, CSS, and JavaScript manage the client-side interface. The database schema supports efficient data storage and retrieval. The implementation follows best practices for security, such as input validation and session management, to protect user data.
+
+CHAPTER 6: FUTURE SCOPE
+-----------------------
+The Aero Flight Booking System has significant potential for future enhancements, including:
+- Integration with payment gateways to enable secure online payments.
+- Real-time flight tracking and notifications to keep users informed.
+- Development of mobile applications for Android and iOS platforms.
+- Implementation of advanced security features such as two-factor authentication.
+- Support for multiple languages and currencies to cater to a global audience.
+- Incorporation of AI-based recommendations for personalized flight suggestions.
+- Expansion to include hotel bookings and travel packages for a comprehensive travel solution.
+
+CHAPTER 7: REFERENCES AND DIPLOGRAPHY
+-------------------------------------
+- PHP Official Documentation: https://www.php.net/docs.php
+- MySQL Documentation: https://dev.mysql.com/doc/
+- W3Schools Web Development Tutorials: https://www.w3schools.com/
+- Stack Overflow Community: https://stackoverflow.com/
+- Various online resources and tutorials on web development, database design, and software engineering principles.
+
+CHAPTER 8: CODE
+---------------
+The project codebase comprises PHP files for backend and frontend logic, CSS for styling, JavaScript for interactivity, and SQL scripts for database schema and data population. Key files include:
+
+- PHP Files: index.php, about.php, admin-dashboard.php, booking-confirmation.php, login.php, register.php, profile.php, user-bookings.php, admin-add-flight.php, admin-delete-flight.php
+- CSS File: assets/css/style.css
+- JavaScript File: assets/js/script.js
+- SQL Scripts: database.sql, database_flights_inserts.sql, database_updates.sql
+- Includes: includes/db_connect.php, includes/header.php, includes/footer.php
+
+This codebase provides a complete flight booking system with user and admin functionalities, ensuring a robust and scalable application.
